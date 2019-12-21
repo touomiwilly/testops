@@ -1,2 +1,2 @@
-FROM Centos
-CMD ["echo", "Hello world"]
+FROM centos
+CMD "echo" "Hello world"

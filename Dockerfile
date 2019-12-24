@@ -33,7 +33,7 @@ RUN chmod +x /usr/bin/chromedriver
 
 COPY testCertProj.jar /var/www/html/testCertProj.jar
 
-CMD "/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java -jar /var/www/html/testProj.jar"
+#CMD "/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java -jar /var/www/html/testProj.jar"
 
 # Copy chromedriver command
 #COPY /usr/bin/chromedriver /usr/bin/chromedriver

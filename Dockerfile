@@ -21,7 +21,6 @@ RUN apt-get install -y openjdk-8-jdk openjdk-8-jre
 # Copy our project files into /var/www/selenium
 RUN rm -f /var/www/html/*
 RUN git clone https://github.com/touomiwilly/testops.git /var/www/html
-# COPY projCert/website /var/www/html
 
 # Copy the selenium framework for php inside /var/www/selenium
 #COPY php-webdriver /var/www/selenium/php-webdriver
@@ -32,7 +31,9 @@ RUN mv chromedriver /usr/bin/chromedriver
 RUN chown root:root /usr/bin/chromedriver
 RUN chmod +x /usr/bin/chromedriver
 
-CMD ["java", "-version"]
+COPY testCertProj.jar /var/www/html/testCertProj.jar
+
+CMD ["java", "-jar /var/www/html/testCertProj.jar"]
 
 # Copy chromedriver command
 #COPY /usr/bin/chromedriver /usr/bin/chromedriver

@@ -32,7 +32,7 @@ RUN mv chromedriver /usr/bin/chromedriver
 RUN chown root:root /usr/bin/chromedriver
 RUN chmod +x /usr/bin/chromedriver
 
-CMD ["java", "-v"]
+CMD ["java", "-version"]
 
 # Copy chromedriver command
 #COPY /usr/bin/chromedriver /usr/bin/chromedriver

@@ -32,12 +32,11 @@ RUN chown root:root /usr/bin/chromedriver
 RUN chmod +x /usr/bin/chromedriver
 
 # Install google chrome: https://gist.github.com/phith0n/9a5f36ec91d3dd0736e86b6cd10959b4
-RUN export CHROME_BIN=/usr/bin/google-chrome
-RUN export DISPLAY=:99.0
 RUN apt-get update
-RUN apt-get install -y libappindicator1 fonts-liberation libasound2 libgconf-2-4 libnspr4 libxss1 libnss3 xdg-utils
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN dpkg -i google-chrome*.deb
+RUN curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add
+RUN echo "deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+RUN apt-get -y update
+RUN apt-get -y install google-chrome-stable
 
 COPY testCertProj.jar /var/www/html/testCertProj.jar
 

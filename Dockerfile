@@ -40,7 +40,7 @@ RUN apt-get -y install google-chrome-stable
 
 #COPY testCertProj.jar /var/www/html/testCertProj.jar
 
-CMD "java -jar /var/www/html/testCertProj.jar"
+#CMD "/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java -jar /var/www/html/testCertProj.jar"
 
 # Copy chromedriver command
 #COPY /usr/bin/chromedriver /usr/bin/chromedriver

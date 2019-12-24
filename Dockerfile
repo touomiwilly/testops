@@ -38,7 +38,7 @@ RUN echo "deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main" 
 RUN apt-get -y update
 RUN apt-get -y install google-chrome-stable
 
-COPY testCertProj.jar /var/www/html/testCertProj.jar
+#COPY testCertProj.jar /var/www/html/testCertProj.jar
 
 CMD "java -jar /var/www/html/testCertProj.jar"
 
